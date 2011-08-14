@@ -8,7 +8,9 @@
 <b>Items</b>
 <ul>
 <% @section.items.each do |a| %>
+ <% if a.item_name != '' %>
 <li><%= a.item_name %></li>
+ <% end %>
 <% end %>
 </ul>
 
