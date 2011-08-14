@@ -12,13 +12,14 @@
   <% end %>
 
   <div class="field">
+    <%= f.collection_select(:section_id, @sections, :id, :section_name) %>
+  </div>
+
+  <div class="field">
     <%= f.label :item_name %><br />
     <%= f.text_field :item_name %>
   </div>
-  <div class="field">
-    <%= f.label :section_id %><br />
-    <%= f.text_field :section_id %>
-  </div>
+  
   <div class="actions">
     <%= f.submit %>
   </div>

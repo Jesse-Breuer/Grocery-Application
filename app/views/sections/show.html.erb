@@ -5,6 +5,12 @@
   <%= @section.section_name %>
 </p>
 
+<b>Items</b>
+<ul>
+<% @section.items.each do |a| %>
+<li><%= a.item_name %></li>
+<% end %>
+</ul>
 
 <%= link_to 'Edit', edit_section_path(@section) %> |
 <%= link_to 'Back', sections_path %>

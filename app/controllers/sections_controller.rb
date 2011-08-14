@@ -25,6 +25,7 @@ class SectionsController < ApplicationController
   # GET /sections/new.xml
   def new
     @section = Section.new
+    @section.items.build
 
     respond_to do |format|
       format.html # new.html.erb
