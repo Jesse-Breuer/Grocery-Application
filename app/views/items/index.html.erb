@@ -10,13 +10,15 @@
   </tr>
 
 <% @items.each do |item| %>
-  <tr>
+ <% if item.item_name != '' %> 
+ <tr>
     <td><%= item.item_name %></td>
     <td><%= item.section.section_name %></td>
     <td><%= link_to 'Show', item %></td>
     <td><%= link_to 'Edit', edit_item_path(item) %></td>
     <td><%= link_to 'Destroy', item, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
+ <% end %>
 <% end %>
 </table>
 
