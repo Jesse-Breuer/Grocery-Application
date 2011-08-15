@@ -2,6 +2,8 @@ GroceryApp::Application.routes.draw do
   resources :items
 
   resources :sections
+  
+  match 'list' => 'sections#list'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,0 +1,23 @@
+<h1>Listing sections</h1>
+
+<ul>
+<% @sections.each do |section| %>
+	<%# if section.item.item_name != nil %>
+		<li>
+			<%= section.section_name %>
+			
+				<% @items.each do |item| %>
+					<% if item.item_name != '' %>
+						<ul>
+						  <% if item.section_id == section.id %> 
+							<li>
+							 	<%= item.item_name %>
+							</li>
+						 <% end %>
+						</ul>
+				<% end %>
+			<% end %>
+		</li>
+	<%# end %>
+<% end %>
+</ul>

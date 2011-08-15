@@ -9,6 +9,16 @@ class SectionsController < ApplicationController
       format.xml  { render :xml => @sections }
     end
   end
+  
+  def list
+    @sections = Section.all
+    @items = Item.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @sections }
+    end
+  end
 
   # GET /sections/1
   # GET /sections/1.xml
