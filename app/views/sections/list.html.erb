@@ -1,23 +1,33 @@
 <h1>Listing sections</h1>
 
-<ul>
+<table>
 <% @sections.each do |section| %>
-	<%# if section.item.item_name != nil %>
-		<li>
+	<% if section.items.length >= 1 %>
+		<tr>
+			<td>
 			<%= section.section_name %>
+			</td>
+			<td>
+			<%= link_to 'Edit', edit_section_path(section) %>
+			</td>
+		</tr>
 			
 				<% @items.each do |item| %>
 					<% if item.item_name != '' %>
-						<ul>
+						<tr>
 						  <% if item.section_id == section.id %> 
-							<li>
-							 	<%= item.item_name %>
-							</li>
+							<td>
+							 	&nbsp;&nbsp;&nbsp;&nbsp;<%= item.item_name %>
+							</td>
+							  <td>
+							  <%= link_to 'Edit', edit_item_path(item) %>
+							  </td>
 						 <% end %>
-						</ul>
+						</tr>
 				<% end %>
 			<% end %>
-		</li>
-	<%# end %>
+	<% end %>
 <% end %>
-</ul>
+</table>
+<%= link_to "New Section", :controller => "sections", :action => "new" %><br />
+<%= link_to "New Item", :controller => "items", :action => "new" %>
