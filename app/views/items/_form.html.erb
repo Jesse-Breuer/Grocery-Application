@@ -11,9 +11,19 @@
     </div>
   <% end %>
 
+<% if add_section? %>
+  <% @item.build_section unless @item.section %>
+   <%= f.fields_for :section do |g| %>
+    <%= g.label :section_name %><br />
+    <%= g.text_field :section_name %><br />
+  <% end %>
+<% end %>
+
+<% if !add_section? %>
   <div class="field">
     <%= f.collection_select(:section_id, @sections, :id, :section_name) %>
   </div>
+<% end %>
 
   <div class="field">
     <%= f.label :item_name %><br />
