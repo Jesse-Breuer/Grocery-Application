@@ -13,19 +13,19 @@
 		</tr>
 			
 				<% @items.each do |item| %>
-					<% if item.item_name != '' %>
-						<tr>
+
 						  <% if item.section_id == section.id %> 
+						<tr>
 							<td>
 							 	&nbsp;&nbsp;&nbsp;&nbsp;<%= item.item_name %>
 							</td>
-							  <td>
-							  <%= link_to 'Edit', edit_item_path(item) %>
-							  </td>
-						 <% end %>
+						    <td>
+						     <%= link_to 'Edit', edit_item_path(item) %>
+						    </td>
 						</tr>
+				 		 <% end %>
+					
 				<% end %>
-			<% end %>
 	<% end %>
 <% end %>
 </table>

@@ -12,13 +12,18 @@
   <% end %>
 
   <div class="field">
+	<br />
     <%= f.label :section_name %><br />
     <%= f.text_field :section_name %>
   </div>
   <%= f.fields_for :items do |g| %>
-      <%= g.label :item_name %><br />
-      <%= g.text_field :item_name %>
+    <%= render "item_fields", :f => g %>
   <% end %>
+
+
+<p><%= link_to_add_fields "Add Item", f, :items %></p>
+
+
   <div class="actions">
     <%= f.submit %>
   </div>
