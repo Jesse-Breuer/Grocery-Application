@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @list.name %>
+</p>
+
+<br />
+
+<%= link_to 'Sections', {:controller => 'sections', :action => 'index', :list_id => list.id } %>
+
+
+<%= link_to 'Edit', edit_list_path(@list) %> |
+<%= link_to 'Back', lists_path %>

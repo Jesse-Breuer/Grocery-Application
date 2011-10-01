@@ -1,8 +1,12 @@
 class SectionsController < ApplicationController
   # GET /sections
   # GET /sections.xml
+  
+  before_filter :find_list
+  
   def index
-    @sections = Section.all
+    #@sections = Section.all
+    @sections = Section.where(:list_id =>@list.id)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -91,4 +95,12 @@ class SectionsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def  find_list
+  	if  params[:list_id]
+  		@list = List.find_by_id(params[:list_id])
+  	end
+  end
+  
+  
 end
