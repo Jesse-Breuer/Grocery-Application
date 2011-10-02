@@ -25,6 +25,7 @@ class ListsController < ApplicationController
   # GET /lists/new.xml
   def new
     @list = List.new
+    @list.sections.build
 
     respond_to do |format|
       format.html # new.html.erb
