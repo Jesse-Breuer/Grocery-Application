@@ -4,9 +4,17 @@ class SectionsController < ApplicationController
   
   before_filter :find_list
   
+  def  find_list
+  	if  params[:list_id]
+  		@list = List.find_by_id(params[:list_id])
+  	end
+  end
+  
   def index
     #@sections = Section.all
     @sections = Section.where(:list_id =>@list.id)
+      @section.items.build
+      @section.list_id = @list.id
 
     respond_to do |format|
       format.html # index.html.erb
@@ -15,8 +23,10 @@ class SectionsController < ApplicationController
   end
   
   def list
-    @sections = Section.all
+    #@sections = Section.all
+    @sections = Section.where(:list_id =>@list.id)
     @items = Item.all
+     
 
     respond_to do |format|
       format.html # index.html.erb
@@ -40,6 +50,7 @@ class SectionsController < ApplicationController
   def new
     @section = Section.new
     @section.items.build
+    @section.list_id = @list.id
 
     respond_to do |format|
       format.html # new.html.erb
@@ -96,11 +107,7 @@ class SectionsController < ApplicationController
     end
   end
   
-  def  find_list
-  	if  params[:list_id]
-  		@list = List.find_by_id(params[:list_id])
-  	end
-  end
+  
   
   
 end

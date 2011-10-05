@@ -17,7 +17,7 @@
     <td><%= link_to 'Destroy', list, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <tr>
-	<td><%= link_to 'Sections', {:controller => 'sections', :action => 'index', :list_id => list.id } %>
+	<td><%= link_to 'Sections', {:controller => 'sections', :action => 'list', :list_id => list.id } %>
 	</td>
 </tr>
 <% end %>
