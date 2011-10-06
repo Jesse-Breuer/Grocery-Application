@@ -8,7 +8,8 @@ GroceryApp::Application.routes.draw do
   resources :sections
   
   match 'list' => 'sections#list'
-  root :to => "sections#list"
+  root :to => "lists#index"
+  #root :to => "sections#list"
   #root :to => "welcome#index"
 
   # The priority is based upon order of creation:

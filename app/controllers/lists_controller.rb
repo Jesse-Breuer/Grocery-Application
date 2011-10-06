@@ -1,6 +1,7 @@
 class ListsController < ApplicationController
   # GET /lists
   # GET /lists.xml
+  before_filter :authenticate_user!
   def index
     @lists = List.all
 
