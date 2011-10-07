@@ -9,6 +9,9 @@ gem 'sqlite3'
 
 gem 'devise', '1.3.0'
 
+gem "rake", "0.8.7"
+
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
