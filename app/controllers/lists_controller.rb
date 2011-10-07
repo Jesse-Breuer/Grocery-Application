@@ -3,8 +3,8 @@ class ListsController < ApplicationController
   # GET /lists.xml
   before_filter :authenticate_user!
   def index
-    @lists = List.all
-
+    #@lists = List.all
+    @lists = current_user.lists
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @lists }
@@ -26,8 +26,7 @@ class ListsController < ApplicationController
   # GET /lists/new.xml
   def new
     @list = List.new
-    #@list.sections.build
-    
+    @list.sections.build
 
     respond_to do |format|
       format.html # new.html.erb
