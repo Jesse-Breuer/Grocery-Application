@@ -30,6 +30,8 @@ class SectionsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
+      #format.html {redirect_to :controller => "sections", :action => "new" , :list_id=>@list.id}
+      
       format.xml  { render :xml => @sections }
     end
   end
@@ -40,6 +42,8 @@ class SectionsController < ApplicationController
     @section = Section.find(params[:id])
 
     respond_to do |format|
+      #format.html {redirect_to :controller => "sections", :action => "new" , :list_id=>@list.id}
+      
       format.html # show.html.erb
       format.xml  { render :xml => @section }
     end
@@ -53,6 +57,7 @@ class SectionsController < ApplicationController
     @section.list_id = @list.id
 
     respond_to do |format|
+      
       format.html # new.html.erb
       format.xml  { render :xml => @section }
     end

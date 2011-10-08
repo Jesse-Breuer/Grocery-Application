@@ -32,5 +32,5 @@
 	<% end %>
 <% end %>
 </table>
-<%= link_to "New Section", :controller => "sections", :action => "new" %><br />
+<%= link_to "New Section", :controller => "sections", :action => "new", :list_id=>@list.id %><br />
 <%= link_to "New Item", :controller => "items", :action => "new" %>
