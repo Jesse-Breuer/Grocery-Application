@@ -7,6 +7,7 @@ GroceryApp::Application.routes.draw do
 
   resources :sections
   
+  match 'first' => 'sections#first'
   match 'list' => 'sections#list'
   root :to => "lists#index"
   #root :to => "sections#list"

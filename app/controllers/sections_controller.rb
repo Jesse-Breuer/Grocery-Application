@@ -62,6 +62,18 @@ class SectionsController < ApplicationController
       format.xml  { render :xml => @section }
     end
   end
+  
+  def first
+    @section = Section.new
+    @section.items.build
+    @section.list_id = @list.id
+
+    respond_to do |format|
+      
+      format.html # new.html.erb
+      format.xml  { render :xml => @section }
+    end
+  end
 
   # GET /sections/1/edit
   def edit

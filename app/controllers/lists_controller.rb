@@ -46,7 +46,7 @@ class ListsController < ApplicationController
 
     respond_to do |format|
       if @list.save
-        format.html {redirect_to :controller => "sections", :action => "new" , :list_id=>@list.id}
+        format.html {redirect_to :controller => "sections", :action => "first" , :list_id=>@list.id}
         #format.html { redirect_to(@list, :notice => 'List was successfully created.') }
         #format.xml  { render :xml => @list, :status => :created, :location => @list }
       else

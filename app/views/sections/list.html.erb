@@ -23,7 +23,7 @@
 							 	&nbsp;&nbsp;&nbsp;&nbsp;<%= item.item_name %>
 							</td>
 						    <td>
-						     <%= link_to 'Edit', edit_item_path(item) %>
+						     <%= link_to 'Edit', edit_item_path(item), :list_id=>@list.id %>
 						    </td>
 						</tr>
 				 		 <% end %>

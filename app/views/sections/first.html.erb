@@ -1,4 +1,4 @@
-<h1>Editing section</h1>
+<h1>Start List</h1>
 
 <%= form_for(@section) do |f| %>
   <% if @section.errors.any? %>
@@ -13,7 +13,7 @@
     </div>
   <% end %>
 
-	<%#= f.hidden_field :list_id, :value => @list.id %>
+	<%= f.hidden_field :list_id, :value => @list.id %>
 	
 
   <div class="field">
@@ -41,5 +41,5 @@
 <% end %>
 
 
-<%= link_to 'Show', @section %> |
+
 <%= link_to "Back to List", :action => "list", :list_id=>@list.id %>
