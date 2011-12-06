@@ -5,21 +5,15 @@
     <th>Name</th>
     <th></th>
     <th></th>
-    <th></th>
   </tr>
 
 <% @lists.each do |list| %>
   <tr>
     <td><%= list.name %></td>
-	<td><%= list.id %></td>
-    <td><%= link_to 'Show', list %></td>
-    <td><%= link_to 'Edit', edit_list_path(list) %></td>
+    <td><%= link_to 'Index', {:controller => 'sections', :action => 'list', :list_id => list.id } %></td>
     <td><%= link_to 'Destroy', list, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
-<tr>
-	<td><%= link_to 'Sections', {:controller => 'sections', :action => 'list', :list_id => list.id } %>
-	</td>
-</tr>
+
 <% end %>
 </table>
 

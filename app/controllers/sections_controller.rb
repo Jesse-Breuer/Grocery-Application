@@ -78,6 +78,7 @@ class SectionsController < ApplicationController
   # GET /sections/1/edit
   def edit
     @section = Section.find(params[:id])
+    @section.list_id = @list.id
   end
 
   # POST /sections
